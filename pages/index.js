@@ -35,6 +35,11 @@ export default function Home() {
     localStorage.setItem('grid', JSON.stringify(grid))
   }
 
+  const onReset = () => {
+    localStorage.setItem('grid', JSON.stringify(arr))
+    setGrid(arr);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -68,6 +73,7 @@ export default function Home() {
           ))}
         </div>
         <Button onClick={onSave}>Save</Button>
+        <Button onClick={onReset}>Reset</Button>
       </main>
     </div>
   )
